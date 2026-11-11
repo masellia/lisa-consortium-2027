@@ -1561,10 +1561,12 @@ a.conference-poster-thumb-frame.has-image:focus-visible {
   }
 
   .conference-hero h1 {
-    font-size: clamp(3rem, 10vw, 3.8rem);
+    font-size: clamp(2.3rem, 7.5vw, 3.2rem);
   }
 
   .conference-lisa-consortium-2027 .conference-eyebrow {
+    margin-bottom: 0.85rem;
+    font-size: 0.8rem;
     transform: translate(0, -3rem);
   }
 
@@ -1579,7 +1581,7 @@ a.conference-poster-thumb-frame.has-image:focus-visible {
   .conference-lisa-consortium-2027 .conference-hero-location {
     right: 0;
     bottom: 0.75rem;
-    font-size: 1.05rem;
+    font-size: 0.9rem;
   }
 
   .conference-page-intro h1,
@@ -1729,24 +1731,26 @@ a.conference-poster-thumb-frame.has-image:focus-visible {
 
   .conference-hero,
   .conference-hero-inner {
-    min-height: 380px;
+    min-height: 320px;
   }
 
   .conference-hero h1 {
-    font-size: clamp(2.65rem, 14vw, 3.2rem);
+    font-size: clamp(2rem, 10vw, 2.5rem);
   }
 
   .conference-lisa-consortium-2027 .conference-eyebrow {
-    transform: translate(0, -2.5rem);
+    margin-bottom: 0.7rem;
+    font-size: 0.68rem;
+    transform: translate(0, -2rem);
   }
 
   .conference-lisa-consortium-2027 .conference-hero h1 {
-    transform: translate(0, -2.75rem);
+    transform: translate(0, -2.2rem);
   }
 
   .conference-lisa-consortium-2027 .conference-hero-location {
     max-width: 100%;
-    font-size: 0.95rem;
+    font-size: 0.78rem;
   }
 
   .conference-section h2 {
