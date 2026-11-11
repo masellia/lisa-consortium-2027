@@ -9,7 +9,7 @@ conference_section: information
 ---
 
 <header class="conference-page-intro">
-  <p class="conference-section-kicker">Science for everyone</p>
+<!--  <p class="conference-section-kicker">Science for everyone</p> -->
   <h1>Public Lecture</h1>
 </header>
 

@@ -12,7 +12,7 @@ map_script: conference-map.js
 {% assign conference = site.data.conferences[page.conference] %}
 
 <section class="conference-page-intro">
-  <p class="conference-section-kicker">Three buildings / one campus</p>
+ <!-- <p class="conference-section-kicker">Three buildings / one campus</p> -->
   <h1>Meeting venues</h1>
   <p>Sessions will take place in three GSSI buildings: Aurora, Zenith, and Polaris. Their locations are shown on the map below, together with the rooms where the meeting will take place.</p>
 </section>
