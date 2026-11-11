@@ -1,8 +1,8 @@
 title: LISA 2027
 description: LISA Consortium Meeting 2027 at the Gran Sasso Science Institute in L'Aquila, 5-8 July 2027.
 locale: en_GB
-baseurl: "/lisa-consortium-2027"
-url: "https://masellia.github.io"
+baseurl: ""
+url: "https://lisaconsortium2027.com"
 permalink: pretty
 markdown: kramdown
 plugins:

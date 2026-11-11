@@ -35,7 +35,7 @@ Working principles:
 
 - Work only inside this repository unless the user explicitly asks otherwise.
 - Read the relevant files before editing and preserve the existing conference design, typography, and responsive behavior.
-- Keep all URLs compatible with the `/lisa-consortium-2027/` GitHub Pages base path. Use `relative_url` and `absolute_url`; never hardcode old `/meetings/lisa-consortium-2027/` paths.
+- Keep all URLs base-path agnostic (the site is served from the root of lisaconsortium2027.com). Use `relative_url` and `absolute_url`; never hardcode old `/meetings/lisa-consortium-2027/` paths.
 - Make focused changes. Do not rewrite unrelated content or add comments to code unless requested.
 - Build and validate before committing. Treat Jekyll YAML warnings or dropped pages as failures.
 - Commit with a concise message and push to `origin main` when the user asks for deployment. GitHub Pages publishes automatically.
