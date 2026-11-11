@@ -31,11 +31,11 @@ venue_map:
       rooms:
         - name: Main Lecture Hall
           floor: Ground floor
-          image: /assets/img/meetings/LISA_27/Aurora_mainlecture.jpg
+          image: /assets/img/Aurora_mainlecture.jpg
           image_alt: Main Lecture Hall in the Aurora Building
         - name: Library Room
           floor: Floor -1
-          image: /assets/img/meetings/LISA_27/Aurora_library.jpg
+          image: /assets/img/Aurora_library.jpg
           image_alt: Library Room in the Aurora Building
         - name: Room A
           floor: Floor -1
@@ -51,7 +51,7 @@ venue_map:
           caption: Photo coming soon
         - name: Fish Room
           floor: First floor
-          image: /assets/img/meetings/LISA_27/Aurora_fishroom.jpg
+          image: /assets/img/Aurora_fishroom.jpg
           image_alt: Fish Room in the Aurora Building
     - id: polaris
       marker_label: "2"
@@ -64,7 +64,7 @@ venue_map:
       rooms:
         - name: Main Auditorium
           floor: Floor -1
-          image: /assets/img/meetings/LISA_27/polaris_mainauditorium.jpg
+          image: /assets/img/polaris_mainauditorium.jpg
           image_alt: Main Auditorium in the Polaris Building
     - id: zenith
       marker_label: "3"
@@ -77,19 +77,19 @@ venue_map:
       rooms:
         - name: Conference Room
           floor: Floor -1
-          image: /assets/img/meetings/LISA_27/Zenith_conferenceroom.jpg
+          image: /assets/img/Zenith_conferenceroom.jpg
           image_alt: Conference Room in the Zenith Building
         - name: Meeting Room 1
           floor: First floor
-          image: /assets/img/meetings/LISA_27/Zenith_meetingroom1.jpg
+          image: /assets/img/Zenith_meetingroom1.jpg
           image_alt: Meeting Room 1 in the Zenith Building
         - name: Meeting Room 2
           floor: Second floor
-          image: /assets/img/meetings/LISA_27/Zenith_meetingroom2.jpg
+          image: /assets/img/Zenith_meetingroom2.jpg
           image_alt: Meeting Room 2 in the Zenith Building
         - name: Meeting Room 3
           floor: Second floor
-          image: /assets/img/meetings/LISA_27/Zenith_meetingroom3.jpg
+          image: /assets/img/Zenith_meetingroom3.jpg
           image_alt: Meeting Room 3 in the Zenith Building
 
 # Dining options are independent of the meeting buildings.

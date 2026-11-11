@@ -30,7 +30,7 @@ conference_page: home
     </div>
     <aside class="conference-about-logos" aria-label="Host institutions">
       <a href="{{ conference.venue_url }}" target="_blank" rel="noopener noreferrer">
-        <img src="{{ '/assets/pdf/meetings/gssi.png' | relative_url }}" alt="Gran Sasso Science Institute" loading="lazy">
+        <img src="{{ '/assets/pdf/gssi.png' | relative_url }}" alt="Gran Sasso Science Institute" loading="lazy">
       </a>
     </aside>
   </div>
@@ -112,7 +112,7 @@ conference_page: home
 <section class="conference-section conference-group-section">
   <h2>Group photo</h2>
   <div class="conference-group-frame" role="img" aria-label="Group photo (coming soon)">
-    <!-- Replace the paragraph below with: <img src="{{ '/assets/img/meetings/lisa-consortium-2027-group.webp' | relative_url }}" alt="LISA Consortium Meeting 2027 group photo" loading="lazy"> -->
+    <!-- Replace the paragraph below with: <img src="{{ '/assets/img/lisa-consortium-2027-group.webp' | relative_url }}" alt="LISA Consortium Meeting 2027 group photo" loading="lazy"> -->
     <p>Group photo coming soon.</p>
   </div>
 </section>
