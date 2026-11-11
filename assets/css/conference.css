@@ -150,15 +150,6 @@ body.conference-site {
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .conference-nav-dropdown:not([open]) > .conference-nav-submenu {
-    display: none;
-  }
-
-  .conference-nav-dropdown:hover > .conference-nav-submenu,
-  .conference-nav-dropdown:focus-within > .conference-nav-submenu {
-    display: grid;
-  }
-
   .conference-nav-dropdown::before {
     content: "";
     position: absolute;
