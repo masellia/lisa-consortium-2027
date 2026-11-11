@@ -321,7 +321,7 @@ local_committee:
     image_alt:
   - name: Riccardo Buscicchio
     initials: RB
-    image:
+    image: /assets/img/RB.jpg
     image_alt:
   - name: Nicole Grillo
     initials: NG
