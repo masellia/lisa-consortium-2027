@@ -149,6 +149,26 @@ body.conference-site {
   position: relative;
 }
 
+@media (hover: hover) and (pointer: fine) {
+  .conference-nav-dropdown:not([open]) > .conference-nav-submenu {
+    display: none;
+  }
+
+  .conference-nav-dropdown:hover > .conference-nav-submenu,
+  .conference-nav-dropdown:focus-within > .conference-nav-submenu {
+    display: grid;
+  }
+
+  .conference-nav-dropdown::before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 100%;
+    height: 0.65rem;
+  }
+}
+
 .conference-nav-submenu {
   position: absolute;
   z-index: 20;
