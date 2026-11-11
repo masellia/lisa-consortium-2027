@@ -1526,11 +1526,12 @@ a.conference-poster-thumb-frame.has-image:focus-visible {
 
 @media (max-width: 760px) {
   .conference-header-inner {
-    min-height: 104px;
+    min-height: 0;
     align-items: flex-start;
     flex-direction: column;
     justify-content: center;
     gap: 0.65rem;
+    padding: 1rem 0;
   }
 
   .conference-nav {
@@ -1556,11 +1557,27 @@ a.conference-poster-thumb-frame.has-image:focus-visible {
   }
 
   .conference-hero h1 {
-    font-size: 3.8rem;
+    font-size: clamp(3rem, 10vw, 3.8rem);
   }
 
+  .conference-lisa-consortium-2027 .conference-eyebrow,
+  .conference-lisa-consortium-2027 .conference-hero h1 {
+    transform: translate(0, -2rem);
+  }
+
+  .conference-lisa-consortium-2027 .conference-hero h1 span {
+    margin-left: clamp(2.5rem, 12vw, 5rem);
+  }
+
+  .conference-lisa-consortium-2027 .conference-hero-location {
+    right: 0;
+    bottom: 0.75rem;
+    font-size: 1.05rem;
+  }
+
+  .conference-page-intro h1,
   .conference-page-code-of-conduct .conference-page-intro h1 {
-    font-size: 3rem;
+    font-size: clamp(2.75rem, 10vw, 3.5rem);
   }
 
   .conference-lisa-consortium-2027 .conference-hero-art {
@@ -1580,8 +1597,16 @@ a.conference-poster-thumb-frame.has-image:focus-visible {
 
   .conference-section,
   .conference-page-intro {
-    padding-top: 4.5rem;
-    padding-bottom: 4.5rem;
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+  }
+
+  .conference-page-intro {
+    padding-bottom: 2.5rem;
+  }
+
+  .conference-page-body {
+    padding-bottom: 5rem;
   }
 
   .conference-committees,
@@ -1626,6 +1651,23 @@ a.conference-poster-thumb-frame.has-image:focus-visible {
     position: static;
   }
 
+  .conference-block summary {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 0.35rem 0.8rem;
+  }
+
+  .conference-block-meta {
+    grid-column: 1;
+    margin-left: 0;
+    white-space: normal;
+  }
+
+  .conference-block-chevron {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+  }
+
   .conference-topic-legend ul {
     flex-direction: row;
     flex-wrap: wrap;
@@ -1666,10 +1708,47 @@ a.conference-poster-thumb-frame.has-image:focus-visible {
     display: none;
   }
 
+  .conference-nav {
+    gap: 0.45rem 0.85rem;
+  }
+
   .conference-nav a,
   .conference-nav-dropdown summary {
     font-size: 0.72rem;
     letter-spacing: 0.08em;
+  }
+
+  .conference-hero,
+  .conference-hero-inner {
+    min-height: 380px;
+  }
+
+  .conference-hero h1 {
+    font-size: clamp(2.65rem, 14vw, 3.2rem);
+  }
+
+  .conference-lisa-consortium-2027 .conference-eyebrow,
+  .conference-lisa-consortium-2027 .conference-hero h1 {
+    transform: translate(0, -1.5rem);
+  }
+
+  .conference-lisa-consortium-2027 .conference-hero-location {
+    max-width: 100%;
+    font-size: 0.95rem;
+  }
+
+  .conference-section h2 {
+    font-size: 2.6rem;
+  }
+
+  .conference-page-intro h1,
+  .conference-page-code-of-conduct .conference-page-intro h1 {
+    font-size: clamp(2.35rem, 12vw, 3rem);
+    overflow-wrap: anywhere;
+  }
+
+  .conference-page-intro > p:last-child {
+    font-size: 1rem;
   }
 
   .conference-slot {
@@ -1679,6 +1758,25 @@ a.conference-poster-thumb-frame.has-image:focus-visible {
 
   .conference-block-meta {
     white-space: normal;
+  }
+
+  .conference-information-card {
+    min-height: 190px;
+  }
+
+  .conference-empty-state {
+    min-height: 300px;
+    padding: 1.5rem;
+  }
+
+  .conference-empty-state div {
+    padding: 1.25rem;
+  }
+
+  .conference-prose,
+  .conference-contact-list,
+  .conference-participant-list li {
+    overflow-wrap: anywhere;
   }
 
   .conference-map {
