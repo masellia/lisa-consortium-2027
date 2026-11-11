@@ -240,10 +240,13 @@ body.conference-site {
 }
 
 .conference-hero h1 span {
-  display: block;
-  margin-left: 5rem;
+  display: inline;
+  margin-left: 0;
   color: var(--conference-accent);
+  font-size: 0.58em;
   font-style: italic;
+  letter-spacing: -0.03em;
+  line-height: 1;
 }
 
 .conference-hero-location {
@@ -303,7 +306,7 @@ body.conference-site {
 
 .conference-lisa-consortium-2027 .conference-hero-location {
   position: absolute;
-  right: 0;
+  right: calc((100vw - 100%) / -2 + 1.5rem);
   bottom: 0.25rem;
   margin: 0;
   color: rgba(255, 255, 255, 0.85);
@@ -1566,7 +1569,7 @@ a.conference-poster-thumb-frame.has-image:focus-visible {
   }
 
   .conference-lisa-consortium-2027 .conference-hero h1 span {
-    margin-left: clamp(2.5rem, 12vw, 5rem);
+    margin-left: 0;
   }
 
   .conference-lisa-consortium-2027 .conference-hero-location {

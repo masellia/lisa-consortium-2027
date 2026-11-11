@@ -15,7 +15,7 @@ conference_page: home
   {% endif %}
   <div class="conference-hero-inner">
     <p class="conference-eyebrow">{{ conference.date_display }}</p>
-    <h1>LISA Consortium Meeting <span>2027</span></h1>
+    <h1>LISA Consortium Meeting&nbsp;<span>2027</span></h1>
     <p class="conference-hero-location">{{ conference.venue_short }}, {{ conference.city }}</p>
   </div>
 </section>
