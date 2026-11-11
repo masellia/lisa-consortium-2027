@@ -254,8 +254,14 @@ body.conference-site {
 
 /* The LISA artwork supplies its own navy background and orbit motif. */
 .conference-lisa-consortium-2027 .conference-hero {
+  min-height: 0;
+  aspect-ratio: 2409 / 710;
   background: #143549;
   border-bottom-color: #0a1c3d;
+}
+
+.conference-page-home .conference-header {
+  border-bottom: 0;
 }
 
 .conference-lisa-consortium-2027 .conference-hero::before {
@@ -276,6 +282,8 @@ body.conference-site {
 }
 
 .conference-lisa-consortium-2027 .conference-hero-inner {
+  min-height: 0;
+  height: 100%;
   color: #ffffff;
 }
 
@@ -295,8 +303,8 @@ body.conference-site {
 
 .conference-lisa-consortium-2027 .conference-hero-location {
   position: absolute;
-  right: clamp(-2rem, -2vw, -1rem);
-  bottom: 1rem;
+  right: 0;
+  bottom: 0.25rem;
   margin: 0;
   color: rgba(255, 255, 255, 0.85);
   text-align: right;
