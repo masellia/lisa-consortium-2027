@@ -9,9 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     dropdown.addEventListener("mouseleave", () => {
-      if (hoverPointer.matches && !dropdown.contains(document.activeElement)) {
-        dropdown.open = false;
-      }
+      if (hoverPointer.matches) dropdown.open = false;
     });
 
     summary.addEventListener("click", (event) => {
