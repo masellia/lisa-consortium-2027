@@ -12,7 +12,7 @@ map_script: conference-dining-map.js
 {% assign conference = site.data.conferences[page.conference] %}
 
 <section class="conference-page-intro">
-  <p class="conference-section-kicker">Food around the city</p>
+  <!--<p class="conference-section-kicker">Food around the city</p>-->
   <h1>Dining in L&rsquo;Aquila</h1>
   <p>Suggestions for places to eat during the meeting.</p>
 </section>
