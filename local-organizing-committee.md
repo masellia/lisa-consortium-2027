@@ -13,7 +13,7 @@ conference_section: information
 <header class="conference-page-intro">
 <!--  <p class="conference-section-kicker">The team at GSSI</p> -->
   <h1>Local Organizing Committee</h1>
-  <p>The local team coordinating the LISA Consortium Meeting 2027 in L&rsquo;Aquila.</p>
+  <p>If you need help, look for these faces.</p>
 </header>
 
 <div class="conference-page-body">
