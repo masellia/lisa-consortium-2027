@@ -11,7 +11,7 @@ conference_section: information
 {% assign conference = site.data.conferences[page.conference] %}
 
 <header class="conference-page-intro">
-  <p class="conference-section-kicker">The team at GSSI</p>
+<!--  <p class="conference-section-kicker">The team at GSSI</p> -->
   <h1>Local Organizing Committee</h1>
   <p>The local team coordinating the LISA Consortium Meeting 2027 in L&rsquo;Aquila.</p>
 </header>
