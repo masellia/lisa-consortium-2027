@@ -1588,12 +1588,14 @@ a.conference-poster-thumb-frame.has-image:focus-visible {
   }
 
   .conference-lisa-consortium-2027 .conference-hero-art {
-    right: auto;
-    left: 50%;
-    width: auto;
+    right: 0;
+    left: 0;
+    width: 100%;
     max-width: none;
-    height: 48%;
-    transform: translateX(-50%);
+    height: 100%;
+    object-fit: cover;
+    object-position: 22% center;
+    transform: none;
   }
 
   .conference-hero::before {
