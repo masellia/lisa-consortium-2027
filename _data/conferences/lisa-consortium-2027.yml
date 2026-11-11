@@ -329,7 +329,7 @@ local_committee:
     image_alt:
   - name: Andrea Maselli
     initials: AM
-    image:
+    image: /assets/img/AM.jpeg
     image_alt:
   - name: Akshita Mittal
     initials: AM
