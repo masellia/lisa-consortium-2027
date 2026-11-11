@@ -292,12 +292,12 @@ body.conference-site {
 
 .conference-lisa-consortium-2027 .conference-eyebrow {
   color: #a9c1ec;
-  transform: translate(clamp(-2rem, -2vw, -1rem), -3rem);
+  transform: translate(clamp(-2rem, -2vw, -1rem), -5rem);
 }
 
 .conference-lisa-consortium-2027 .conference-hero h1 {
   color: #ffffff;
-  transform: translate(clamp(-2rem, -2vw, -1rem), -3rem);
+  transform: translate(clamp(-2rem, -2vw, -1rem), -5rem);
 }
 
 .conference-lisa-consortium-2027 .conference-hero h1 span {
@@ -1565,7 +1565,7 @@ a.conference-poster-thumb-frame.has-image:focus-visible {
 
   .conference-lisa-consortium-2027 .conference-eyebrow,
   .conference-lisa-consortium-2027 .conference-hero h1 {
-    transform: translate(0, -2rem);
+    transform: translate(0, -3rem);
   }
 
   .conference-lisa-consortium-2027 .conference-hero h1 span {
@@ -1732,7 +1732,7 @@ a.conference-poster-thumb-frame.has-image:focus-visible {
 
   .conference-lisa-consortium-2027 .conference-eyebrow,
   .conference-lisa-consortium-2027 .conference-hero h1 {
-    transform: translate(0, -1.5rem);
+    transform: translate(0, -2.5rem);
   }
 
   .conference-lisa-consortium-2027 .conference-hero-location {
