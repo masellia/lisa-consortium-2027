@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% seo %}
+    {% assign conference = site.data.conferences[page.conference] %}
+    <link rel="icon" href="{{ '/assets/img/meetings/logo_LISA27.svg' | relative_url }}" type="image/svg+xml">
+    {% if page.conference_map %}
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    {% endif %}
+    <link rel="stylesheet" href="{{ '/assets/css/conference.css' | relative_url }}">
+    {% if page.conference_map %}
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" defer></script>
+    <script src="{{ '/assets/js/' | append: page.map_script | relative_url }}" defer></script>
+    {% endif %}
+    {% if conference.accent %}
+    <style>:root { --conference-accent: {{ conference.accent }}; }</style>
+    {% endif %}
+    {% if page.conference_page == 'home' %}
+      <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "Event",
+          "name": {{ conference.title | jsonify }},
+          "description": {{ conference.description | jsonify }},
+          "startDate": {{ conference.start_date | jsonify }},
+          "endDate": {{ conference.end_date | jsonify }},
+          "eventStatus": "https://schema.org/EventScheduled",
+          "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+          "url": {{ page.url | absolute_url | jsonify }},
+          "location": {% if conference.venue_map.venues and conference.venue_map.venues.size > 0 %}[
+            {% for venue in conference.venue_map.venues %}
+            {
+              "@type": "Place",
+              "name": {{ venue.name | jsonify }},
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": {{ venue.address | jsonify }},
+                "postalCode": "67100",
+                "addressLocality": "L'Aquila",
+                "addressRegion": "AQ",
+                "addressCountry": "IT"
+              },
+              "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": {{ venue.latitude | jsonify }},
+                "longitude": {{ venue.longitude | jsonify }}
+              }
+            }{% unless forloop.last %},{% endunless %}
+            {% endfor %}
+          ]{% else %}{
+            "@type": "Place",
+            "name": {{ conference.venue_room | append: ', ' | append: conference.venue | jsonify }},
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": {{ conference.venue_address | jsonify }},
+              "postalCode": "67100",
+              "addressLocality": "L'Aquila",
+              "addressRegion": "AQ",
+              "addressCountry": "IT"
+            }
+          }{% endif %},
+          "organizer": {
+            "@type": "CollegeOrUniversity",
+            "name": {{ conference.venue | jsonify }},
+            "url": {{ conference.venue_url | jsonify }}
+          }
+        }
+      </script>
+    {% endif %}
+  </head>
+  <body class="conference-site conference-{{ page.conference }} conference-page-{{ page.conference_page }}">
+    <a class="conference-skip-link" href="#conference-content">Skip to content</a>
+    {% include conference-header.html %}
+
+    <main id="conference-content">
+      {{ content }}
+    </main>
+
+    <footer class="conference-footer">
+      <div>
+        <strong>{{ conference.short_title }}</strong>
+        <span>{{ conference.date_display }} / {{ conference.city }}</span>
+      </div>
+    </footer>
+  </body>
+</html>

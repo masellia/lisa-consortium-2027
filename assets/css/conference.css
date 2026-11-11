@@ -1,0 +1,1716 @@
+:root {
+  --conference-paper: #ffffff;
+  --conference-ink: #191919;
+  --conference-muted: #686868;
+  --conference-accent: #ba3b32;
+  --conference-line: rgba(25, 25, 25, 0.16);
+  --conference-white: #ffffff;
+  --conference-serif: Georgia, "Times New Roman", serif;
+  --conference-sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body.conference-site {
+  min-width: 320px;
+  margin: 0;
+  background: var(--conference-paper);
+  color: var(--conference-ink);
+  font-family: var(--conference-sans);
+  font-size: 16px;
+  line-height: 1.6;
+  text-rendering: optimizeLegibility;
+}
+
+.conference-site a {
+  color: inherit;
+}
+
+.conference-skip-link {
+  position: fixed;
+  z-index: 100;
+  top: 0.75rem;
+  left: 0.75rem;
+  padding: 0.6rem 0.85rem;
+  background: var(--conference-ink);
+  color: var(--conference-white) !important;
+  transform: translateY(-180%);
+}
+
+.conference-skip-link:focus {
+  transform: translateY(0);
+}
+
+.conference-header {
+  position: relative;
+  z-index: 10;
+  border-bottom: 1px solid var(--conference-line);
+}
+
+.conference-header-inner {
+  width: min(1180px, calc(100% - 3rem));
+  min-height: 78px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.conference-wordmark {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.7rem;
+  text-decoration: none;
+  letter-spacing: -0.02em;
+}
+
+.conference-wordmark span {
+  font-family: var(--conference-serif);
+  font-size: 1.15rem;
+}
+
+.conference-wordmark small {
+  color: var(--conference-accent);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.conference-nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: clamp(1rem, 3vw, 2.5rem);
+}
+
+.conference-nav a,
+.conference-nav-dropdown summary {
+  position: relative;
+  padding: 0.35rem 0;
+  color: var(--conference-muted);
+  cursor: pointer;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  list-style: none;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.conference-nav-dropdown summary::-webkit-details-marker {
+  display: none;
+}
+
+.conference-nav-dropdown summary::marker {
+  content: "";
+}
+
+.conference-nav a::after,
+.conference-nav-dropdown summary::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  background: var(--conference-accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 180ms ease;
+}
+
+.conference-nav a:hover,
+.conference-nav a:focus-visible,
+.conference-nav a[aria-current="page"],
+.conference-nav-dropdown summary:hover,
+.conference-nav-dropdown summary:focus-visible,
+.conference-nav-dropdown summary[aria-current="page"] {
+  color: var(--conference-ink);
+}
+
+.conference-nav a:hover::after,
+.conference-nav a:focus-visible::after,
+.conference-nav a[aria-current="page"]::after,
+.conference-nav-dropdown summary:hover::after,
+.conference-nav-dropdown summary:focus-visible::after,
+.conference-nav-dropdown summary[aria-current="page"]::after {
+  transform: scaleX(1);
+}
+
+.conference-nav-dropdown {
+  position: relative;
+}
+
+.conference-nav-submenu {
+  position: absolute;
+  z-index: 20;
+  top: calc(100% + 0.65rem);
+  right: 0;
+  display: grid;
+  min-width: 260px;
+  padding: 0.45rem;
+  border: 1px solid var(--conference-line);
+  background: var(--conference-paper);
+  box-shadow: 0 14px 35px rgba(25, 25, 25, 0.14);
+}
+
+.conference-nav-submenu a {
+  padding: 0.65rem 0.75rem;
+  font-size: 0.7rem;
+  line-height: 1.35;
+  white-space: nowrap;
+}
+
+.conference-nav-submenu a::after {
+  display: none;
+}
+
+.conference-nav-submenu a:hover,
+.conference-nav-submenu a:focus-visible,
+.conference-nav-submenu a[aria-current="page"] {
+  background: rgba(30, 58, 110, 0.08);
+  color: var(--conference-accent);
+  outline-offset: -2px;
+}
+
+.conference-hero {
+  position: relative;
+  min-height: 440px;
+  overflow: hidden;
+  border-bottom: 1px solid var(--conference-line);
+}
+
+.conference-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: none;
+  opacity: 0.4;
+}
+
+.conference-hero-inner {
+  position: relative;
+  z-index: 2;
+  width: min(1180px, calc(100% - 3rem));
+  min-height: 440px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 3rem 0;
+}
+
+.conference-eyebrow {
+  margin: 0 0 1.25rem;
+  color: var(--conference-accent);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.17em;
+  text-transform: uppercase;
+}
+
+.conference-hero h1 {
+  max-width: 780px;
+  margin: 0;
+  font-family: var(--conference-serif);
+  font-size: 6rem;
+  font-weight: 400;
+  letter-spacing: -0.065em;
+  line-height: 0.82;
+}
+
+.conference-hero h1 span {
+  display: block;
+  margin-left: 5rem;
+  color: var(--conference-accent);
+  font-style: italic;
+}
+
+.conference-hero-location {
+  max-width: 470px;
+  margin: 1.5rem 0 0;
+  font-size: 1.4rem;
+}
+
+/* The LISA artwork supplies its own navy background and orbit motif. */
+.conference-lisa-consortium-2027 .conference-hero {
+  background: #143549;
+  border-bottom-color: #0a1c3d;
+}
+
+.conference-lisa-consortium-2027 .conference-hero::before {
+  display: none;
+}
+
+.conference-lisa-consortium-2027 .conference-hero-art {
+  position: absolute;
+  z-index: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: auto;
+  opacity: 1;
+  pointer-events: none;
+}
+
+.conference-lisa-consortium-2027 .conference-hero-inner {
+  color: #ffffff;
+}
+
+.conference-lisa-consortium-2027 .conference-eyebrow {
+  color: #a9c1ec;
+  transform: translate(clamp(-2rem, -2vw, -1rem), -3rem);
+}
+
+.conference-lisa-consortium-2027 .conference-hero h1 {
+  color: #ffffff;
+  transform: translate(clamp(-2rem, -2vw, -1rem), -3rem);
+}
+
+.conference-lisa-consortium-2027 .conference-hero h1 span {
+  color: #a9c1ec;
+}
+
+.conference-lisa-consortium-2027 .conference-hero-location {
+  position: absolute;
+  right: clamp(-2rem, -2vw, -1rem);
+  bottom: 1rem;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.85);
+  text-align: right;
+}
+
+.conference-section,
+.conference-page-intro {
+  width: min(1180px, calc(100% - 3rem));
+  margin: 0 auto;
+}
+
+.conference-section {
+  padding: 4rem 0;
+  border-bottom: 1px solid var(--conference-line);
+}
+
+.conference-page-intro {
+  padding: 4rem 0 3rem;
+}
+
+.conference-page-intro h1,
+.conference-section h2 {
+  margin: 0;
+  font-family: var(--conference-serif);
+  font-weight: 400;
+  letter-spacing: -0.045em;
+  line-height: 1;
+}
+
+.conference-page-intro h1 {
+  font-size: 4rem;
+}
+
+.conference-section h2 {
+  font-size: 3.2rem;
+}
+
+.conference-about h2,
+.conference-practical h2 {
+  font-size: 2.6rem;
+}
+
+.conference-page-intro > p:last-child {
+  max-width: 650px;
+  margin: 1.5rem 0 0;
+  color: var(--conference-muted);
+  font-size: 1.08rem;
+}
+
+.conference-about-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(180px, 0.3fr);
+  gap: clamp(2.5rem, 6vw, 6rem);
+  align-items: start;
+  margin-top: 1.75rem;
+}
+
+.conference-about-text {
+  max-width: 780px;
+}
+
+.conference-about-text p {
+  margin: 0 0 1.25rem;
+  font-size: 1.12rem;
+  line-height: 1.75;
+  text-align: justify;
+}
+
+.conference-about-text p:last-child {
+  margin-bottom: 0;
+}
+
+.conference-about-logos {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2.5rem;
+  padding-top: 0.15rem;
+}
+
+.conference-about-logos a {
+  display: block;
+  width: min(160px, 100%);
+}
+
+.conference-about-logos img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.conference-venues-intro {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.7fr) minmax(0, 1fr);
+  gap: clamp(2rem, 7vw, 7rem);
+  align-items: end;
+}
+
+.conference-section-kicker {
+  margin: 0 0 0.8rem;
+  color: var(--conference-accent);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.conference-venues-intro > p {
+  max-width: 620px;
+  margin: 0;
+  color: var(--conference-muted);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.conference-map-frame {
+  position: relative;
+  margin-top: 2.25rem;
+  overflow: hidden;
+  border: 1px solid var(--conference-line);
+  background: #edf1f5;
+}
+
+.conference-venue-page .conference-map-frame {
+  margin-top: 0;
+}
+
+.conference-map {
+  min-height: 520px;
+  background: #edf1f5;
+}
+
+.conference-map:not(.is-ready),
+.conference-map.is-unavailable {
+  display: grid;
+  place-items: center;
+  padding: 2rem;
+}
+
+.conference-map-status,
+.conference-map-noscript {
+  margin: 0;
+  color: var(--conference-muted);
+  text-align: center;
+}
+
+.conference-map-noscript {
+  padding: 1rem;
+  border-top: 1px solid var(--conference-line);
+  background: var(--conference-paper);
+}
+
+.conference-map .leaflet-control-attribution {
+  font-family: var(--conference-sans);
+  font-size: 0.65rem;
+}
+
+.conference-map .leaflet-control-attribution a {
+  color: #245b91;
+}
+
+.conference-map-marker-shell {
+  border: 0;
+  background: transparent;
+}
+
+.conference-map-marker {
+  display: grid;
+  width: 40px;
+  height: 40px;
+  place-items: center;
+  border: 3px solid #ffffff;
+  border-radius: 50%;
+  background: var(--conference-accent);
+  box-shadow: 0 6px 18px rgba(10, 28, 61, 0.34);
+  color: #ffffff;
+  font-family: var(--conference-sans);
+  font-size: 0.82rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.conference-map-marker b {
+  color: #ffffff;
+  font: inherit;
+}
+
+.conference-map-popup .leaflet-popup-content-wrapper {
+  border-radius: 0;
+  box-shadow: 0 12px 35px rgba(10, 28, 61, 0.28);
+}
+
+.conference-map-popup .leaflet-popup-content {
+  margin: 1.15rem;
+  font-family: var(--conference-sans);
+}
+
+.conference-map-popup-content header {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+  padding-bottom: 0.8rem;
+  border-bottom: 1px solid var(--conference-line);
+}
+
+.conference-map-popup-number,
+.conference-venue-number {
+  display: grid;
+  flex: none;
+  width: 2rem;
+  height: 2rem;
+  place-items: center;
+  background: var(--conference-accent);
+  color: #ffffff;
+  font-size: 0.72rem;
+  font-weight: 800;
+}
+
+.conference-map-popup-content h3 {
+  margin: 0;
+  color: var(--conference-ink);
+  font-family: var(--conference-serif);
+  font-size: 1.35rem;
+  font-weight: 400;
+  line-height: 1.15;
+}
+
+.conference-map-popup-content header p {
+  margin: 0.15rem 0 0;
+  color: var(--conference-muted);
+  font-size: 0.76rem;
+}
+
+.conference-map-rooms {
+  margin-top: 0.85rem;
+  max-height: min(280px, 45vh);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding-right: 0.35rem;
+  scrollbar-gutter: stable;
+}
+
+.conference-map-room {
+  display: grid;
+  grid-template-columns: 92px minmax(0, 1fr);
+  gap: 0.8rem;
+  align-items: center;
+}
+
+.conference-map-room img,
+.conference-map-room-placeholder {
+  display: block;
+  width: 92px;
+  height: 68px;
+  object-fit: cover;
+}
+
+.conference-map-room-placeholder,
+.conference-room-placeholder {
+  display: grid;
+  place-items: center;
+  padding: 0.6rem;
+  background:
+    linear-gradient(135deg, rgba(30, 58, 110, 0.08), rgba(30, 58, 110, 0.2)),
+    var(--conference-paper);
+  color: var(--conference-muted);
+  font-size: 0.68rem;
+  line-height: 1.25;
+  text-align: center;
+}
+
+.conference-map-room h4 {
+  margin: 0;
+  color: var(--conference-ink);
+  font-family: var(--conference-serif);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.conference-map-room p {
+  margin: 0.15rem 0 0;
+  color: var(--conference-muted);
+  font-size: 0.72rem;
+}
+
+.conference-map-directions {
+  display: inline-block;
+  margin-top: 0.9rem;
+  color: var(--conference-accent) !important;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-underline-offset: 0.2em;
+  text-transform: uppercase;
+}
+
+.conference-map-popup-note {
+  margin: 0.8rem 0 0;
+  color: var(--conference-ink);
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+
+.conference-venue-directory {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  align-items: start;
+  margin-top: 1.25rem;
+}
+
+.conference-venue-card {
+  border: 1px solid var(--conference-line);
+  background: var(--conference-paper);
+}
+
+.conference-venue-card summary {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: 0.85rem;
+  align-items: center;
+  min-height: 92px;
+  padding: 1rem;
+  cursor: pointer;
+  list-style: none;
+}
+
+.conference-venue-card summary::-webkit-details-marker {
+  display: none;
+}
+
+.conference-venue-card summary::marker {
+  content: "";
+}
+
+.conference-venue-card summary strong,
+.conference-venue-card summary small {
+  display: block;
+}
+
+.conference-venue-card summary strong {
+  font-family: var(--conference-serif);
+  font-size: 1.15rem;
+  font-weight: 400;
+}
+
+.conference-venue-card summary small {
+  margin-top: 0.15rem;
+  color: var(--conference-muted);
+  font-size: 0.72rem;
+  line-height: 1.35;
+}
+
+.conference-venue-chevron {
+  width: 0.55rem;
+  height: 0.55rem;
+  border-right: 2px solid var(--conference-accent);
+  border-bottom: 2px solid var(--conference-accent);
+  transform: rotate(45deg) translateY(-2px);
+  transition: transform 180ms ease;
+}
+
+.conference-venue-card[open] .conference-venue-chevron {
+  transform: rotate(225deg) translateY(-2px);
+}
+
+.conference-venue-card-body {
+  padding: 0 1rem 1rem;
+  border-top: 1px solid var(--conference-line);
+}
+
+.conference-venue-address {
+  margin: 0;
+  padding: 0.8rem 0;
+  color: var(--conference-muted);
+  font-size: 0.78rem;
+  line-height: 1.45;
+}
+
+.conference-room-list {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.conference-room-card {
+  display: grid;
+  grid-template-columns: 96px minmax(0, 1fr);
+  gap: 0.8rem;
+  align-items: center;
+}
+
+.conference-room-card img,
+.conference-room-placeholder {
+  width: 96px;
+  height: 72px;
+  object-fit: cover;
+}
+
+.conference-room-card h3 {
+  margin: 0;
+  font-family: var(--conference-serif);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.25;
+}
+
+.conference-room-card p {
+  margin: 0.15rem 0 0;
+  color: var(--conference-muted);
+  font-size: 0.75rem;
+}
+
+.conference-venue-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem 1rem;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.conference-venue-actions button,
+.conference-venue-actions a {
+  color: var(--conference-accent);
+  font-family: var(--conference-sans);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.conference-venue-actions button {
+  padding: 0;
+  border: 0;
+  border-bottom: 1px solid currentColor;
+  background: transparent;
+  cursor: pointer;
+}
+
+.conference-venue-actions a {
+  text-underline-offset: 0.2em;
+}
+
+.conference-dining-page .conference-map-frame {
+  margin-top: 0;
+}
+
+.conference-dining-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  margin-top: 1.25rem;
+  border: 1px solid var(--conference-line);
+  background: var(--conference-line);
+}
+
+.conference-dining-card {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 0.9rem;
+  align-items: start;
+  padding: 1.15rem;
+  background: var(--conference-paper);
+}
+
+.conference-dining-number {
+  display: grid;
+  width: 2rem;
+  height: 2rem;
+  place-items: center;
+  background: var(--conference-accent);
+  color: #ffffff;
+  font-size: 0.72rem;
+  font-weight: 800;
+}
+
+.conference-dining-copy h2 {
+  margin: 0;
+  font-family: var(--conference-serif);
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.conference-dining-type,
+.conference-map-popup-type {
+  color: var(--conference-accent);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.conference-dining-type {
+  margin: 0.35rem 0 0;
+}
+
+.conference-map-popup-type {
+  margin: 0.8rem 0 0;
+}
+
+.conference-dining-address {
+  margin: 0.3rem 0 0;
+  color: var(--conference-muted);
+  font-size: 0.78rem;
+  line-height: 1.45;
+}
+
+.conference-dining-note {
+  margin: 0.4rem 0 0;
+  color: var(--conference-ink);
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+
+.conference-dining-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem 1rem;
+  align-items: center;
+  margin-top: 0.8rem;
+}
+
+.conference-dining-actions button,
+.conference-dining-actions a {
+  color: var(--conference-accent);
+  font-family: var(--conference-sans);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.conference-dining-actions button {
+  padding: 0;
+  border: 0;
+  border-bottom: 1px solid currentColor;
+  background: transparent;
+  cursor: pointer;
+}
+
+.conference-dining-actions a {
+  text-underline-offset: 0.2em;
+}
+
+.conference-committees {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(3rem, 8vw, 8rem);
+  margin: 0;
+}
+
+.conference-committee h3 {
+  margin: 0 0 1.4rem;
+  color: var(--conference-accent);
+  font-family: var(--conference-serif);
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1.15;
+}
+
+.conference-committee ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.conference-committee li {
+  padding: 0.12rem 0;
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+
+.conference-committee li.conference-committee-member {
+  padding: 0.4rem 0;
+}
+
+.conference-committee-member-name,
+.conference-committee-member-affiliation {
+  display: block;
+}
+
+.conference-committee-member-name {
+  font-weight: 400;
+}
+
+.conference-committee-member-affiliation {
+  color: var(--conference-muted);
+  font-size: 0.78rem;
+  line-height: 1.4;
+}
+
+.conference-committees-with-poster {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 150px;
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: start;
+  margin: 0;
+}
+
+.conference-committees-with-poster .conference-committees {
+  gap: 2.5rem;
+}
+
+.conference-committees.conference-committees-single {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.conference-poster-thumb {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 0.2rem;
+  margin-top: 2rem;
+  transform: translateX(-3rem);
+}
+
+.conference-poster-thumb-frame {
+  display: grid;
+  place-items: center;
+  width: 150px;
+  height: 210px;
+  padding: 0.75rem;
+  border: 1px solid var(--conference-line);
+  background: var(--conference-paper);
+  text-align: center;
+  text-decoration: none;
+}
+
+.conference-poster-thumb-frame span {
+  color: var(--conference-muted);
+  font-size: 0.8rem;
+  line-height: 1.4;
+}
+
+.conference-poster-thumb-frame.has-image {
+  padding: 0;
+  overflow: hidden;
+}
+
+.conference-poster-thumb-frame.has-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+a.conference-poster-thumb-frame.has-image:hover,
+a.conference-poster-thumb-frame.has-image:focus-visible {
+  border-color: var(--conference-accent);
+}
+
+.conference-poster-thumb-caption {
+  margin-top: 0.5rem;
+  color: var(--conference-muted);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+}
+
+.conference-placeholder-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1px;
+  margin-top: 2rem;
+  background: var(--conference-line);
+  border: 1px solid var(--conference-line);
+}
+
+.conference-placeholder-grid-three {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.conference-placeholder-card {
+  padding: 1.5rem;
+  background: var(--conference-paper);
+}
+
+.conference-placeholder-card span {
+  color: var(--conference-accent);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.conference-placeholder-card h3 {
+  margin: 1rem 0 0.5rem;
+  font-family: var(--conference-serif);
+  font-size: 1.6rem;
+  font-weight: 400;
+}
+
+.conference-placeholder-card p {
+  margin: 0;
+  color: var(--conference-muted);
+}
+
+.conference-placeholder-card p + p {
+  margin-top: 1rem;
+}
+
+.conference-address {
+  color: inherit;
+  text-decoration-color: var(--conference-line);
+  text-underline-offset: 0.2em;
+  transition: color 0.18s ease;
+}
+
+.conference-address:hover,
+.conference-address:focus-visible {
+  color: var(--conference-accent);
+}
+
+.conference-contact-list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.2rem;
+  color: var(--conference-muted);
+  font-size: 0.82rem;
+}
+
+.conference-contact-list a {
+  text-decoration-color: var(--conference-line);
+  text-underline-offset: 0.2em;
+}
+
+.conference-contact-list a:hover,
+.conference-contact-list a:focus-visible {
+  color: var(--conference-accent);
+}
+
+.conference-group-section h2 {
+  font-size: 2.6rem;
+}
+
+.conference-group-frame {
+  display: grid;
+  place-items: center;
+  margin-top: 2rem;
+  border: 1px solid var(--conference-line);
+  text-align: center;
+  min-height: 320px;
+  padding: 3rem 2rem;
+}
+
+.conference-group-frame p {
+  margin: 0;
+  color: var(--conference-muted);
+  font-size: 1rem;
+}
+
+.conference-group-frame img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.conference-page-body {
+  width: min(1180px, calc(100% - 3rem));
+  margin: 0 auto;
+  padding-bottom: 8rem;
+}
+
+.conference-information-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.conference-information-card {
+  display: flex;
+  min-height: 230px;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1.5rem;
+  border: 1px solid var(--conference-line);
+  background: var(--conference-paper);
+  text-decoration: none;
+  transition: border-color 180ms ease, transform 180ms ease;
+}
+
+.conference-information-card:hover,
+.conference-information-card:focus-visible {
+  border-color: var(--conference-accent);
+  transform: translateY(-3px);
+}
+
+.conference-information-card > span {
+  margin-bottom: auto;
+  color: var(--conference-accent);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.conference-information-card strong {
+  font-family: var(--conference-serif);
+  font-size: 1.55rem;
+  font-weight: 400;
+  line-height: 1.15;
+}
+
+.conference-information-card p {
+  margin: 0.75rem 0 0;
+  color: var(--conference-muted);
+  font-size: 0.85rem;
+  line-height: 1.55;
+}
+
+.conference-profile-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.conference-profile-card {
+  min-width: 0;
+  text-align: center;
+}
+
+.conference-profile-card img,
+.conference-profile-placeholder {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+}
+
+.conference-profile-card img {
+  object-fit: cover;
+}
+
+.conference-profile-placeholder {
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--conference-line);
+  background:
+    linear-gradient(145deg, rgba(30, 58, 110, 0.04), rgba(30, 58, 110, 0.16)),
+    var(--conference-paper);
+  color: var(--conference-accent);
+}
+
+.conference-profile-placeholder span {
+  display: grid;
+  width: 4.5rem;
+  height: 4.5rem;
+  place-items: center;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  font-family: var(--conference-serif);
+  font-size: 1.2rem;
+}
+
+.conference-profile-card h2 {
+  margin: 0.85rem 0 0;
+  font-family: var(--conference-serif);
+  font-size: 1.15rem;
+  font-weight: 400;
+  line-height: 1.25;
+}
+
+.conference-prose {
+  max-width: 820px;
+  margin: 0;
+  padding-top: 1rem;
+}
+
+.conference-prose h2 {
+  margin: 2.8rem 0 1rem;
+  font-family: var(--conference-serif);
+  font-size: 2rem;
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+}
+
+.conference-prose h2:first-child {
+  margin-top: 0;
+}
+
+.conference-prose p,
+.conference-prose li {
+  color: var(--conference-ink);
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+.conference-prose p {
+  margin: 0 0 1.25rem;
+}
+
+.conference-prose ul {
+  margin: 0 0 1.25rem;
+  padding-left: 1.2rem;
+}
+
+.conference-prose li {
+  margin-bottom: 0.3rem;
+}
+
+.conference-prose a {
+  color: var(--conference-accent);
+  text-underline-offset: 0.2em;
+}
+
+.conference-conduct-contact {
+  margin-top: 1.75rem;
+  padding: 1.5rem;
+  border: 1px solid var(--conference-line);
+  background: var(--conference-paper);
+}
+
+.conference-conduct-contact strong {
+  font-family: var(--conference-serif);
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+.conference-conduct-contact ul {
+  margin: 0.75rem 0 0;
+  padding-left: 1.2rem;
+}
+
+.conference-conduct-contact li {
+  font-size: 0.92rem;
+  line-height: 1.7;
+}
+
+.conference-day {
+  display: grid;
+  grid-template-columns: minmax(180px, 0.35fr) minmax(0, 1fr);
+  gap: clamp(2rem, 7vw, 7rem);
+  padding: 2.7rem 0;
+  border-top: 1px solid var(--conference-ink);
+}
+
+.conference-day-label {
+  position: sticky;
+  top: 1.5rem;
+  align-self: start;
+}
+
+.conference-day-label > span {
+  display: block;
+  color: var(--conference-accent);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.conference-day-label h2 {
+  margin: 0.35rem 0 0;
+  font-family: var(--conference-serif);
+  font-size: 1.75rem;
+  font-weight: 400;
+  line-height: 1.15;
+}
+
+.conference-topic-legend {
+  margin-top: 2rem;
+}
+
+.conference-topic-legend > strong {
+  display: block;
+  margin-bottom: 0.7rem;
+  color: var(--conference-muted);
+  font-size: 0.64rem;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.conference-topic-legend ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.conference-topic-legend li {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--conference-ink);
+  font-size: 0.74rem;
+  line-height: 1.25;
+}
+
+.conference-topic-swatch,
+.conference-topic-marker {
+  flex: none;
+  width: 0.8rem;
+  height: 0.8rem;
+  background: var(--topic-color);
+  border: 1px solid rgba(25, 25, 25, 0.12);
+}
+
+.conference-blocks {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.conference-block {
+  border: 1px solid var(--conference-line);
+  background: var(--conference-paper);
+}
+
+.conference-block summary {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  cursor: pointer;
+  list-style: none;
+}
+
+.conference-block summary::-webkit-details-marker {
+  display: none;
+}
+
+.conference-block summary::marker {
+  content: "";
+}
+
+.conference-block-label {
+  font-family: var(--conference-serif);
+  font-size: 1.3rem;
+  font-weight: 400;
+}
+
+.conference-block-meta {
+  margin-left: auto;
+  color: var(--conference-muted);
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+}
+
+.conference-block-chevron {
+  flex: none;
+  align-self: center;
+  width: 0.55rem;
+  height: 0.55rem;
+  border-right: 2px solid var(--conference-accent);
+  border-bottom: 2px solid var(--conference-accent);
+  transform: rotate(45deg) translateY(-2px);
+  transition: transform 180ms ease;
+}
+
+.conference-block[open] .conference-block-chevron {
+  transform: rotate(225deg) translateY(-2px);
+}
+
+.conference-slots {
+  border-top: 1px solid var(--conference-line);
+}
+
+.conference-slot {
+  display: grid;
+  grid-template-columns: 110px minmax(0, 1fr);
+  gap: 1.5rem;
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--conference-line);
+}
+
+.conference-slot:last-child {
+  border-bottom: 0;
+}
+
+.conference-slot-time {
+  color: var(--conference-accent);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  white-space: nowrap;
+}
+
+.conference-slot h3 {
+  margin: 0;
+  font-family: var(--conference-serif);
+  font-size: 1.15rem;
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+.conference-slot-title {
+  display: flex;
+  align-items: baseline;
+  gap: 0.65rem;
+}
+
+.conference-slot-title .conference-topic-marker {
+  transform: translateY(0.05rem);
+}
+
+.conference-slot p {
+  margin: 0.25rem 0 0;
+  color: var(--conference-muted);
+  font-size: 0.9rem;
+}
+
+.conference-slot-break {
+  background: rgba(25, 25, 25, 0.03);
+}
+
+.conference-slot-break h3 {
+  font-family: var(--conference-sans);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.conference-empty-state {
+  position: relative;
+  min-height: 360px;
+  display: grid;
+  place-items: center;
+  padding: 3rem;
+  overflow: hidden;
+  border: 1px solid var(--conference-line);
+  text-align: center;
+}
+
+.conference-empty-state::before {
+  content: "";
+  position: absolute;
+  width: 320px;
+  height: 320px;
+  border: 1px solid rgba(186, 59, 50, 0.32);
+  border-radius: 50%;
+}
+
+.conference-empty-state div {
+  position: relative;
+  z-index: 1;
+  max-width: 420px;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.92);
+}
+
+.conference-empty-state h2 {
+  margin: 0;
+  font-family: var(--conference-serif);
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+.conference-empty-state p {
+  margin: 0.7rem 0 0;
+  color: var(--conference-muted);
+}
+
+.conference-participant-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 3rem;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--conference-ink);
+  list-style: none;
+}
+
+.conference-participant-list li {
+  display: flex;
+  justify-content: flex-start;
+  gap: 0;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid var(--conference-line);
+  font-size: 0.85rem;
+  line-height: 1.45;
+}
+
+.conference-participant-affiliation {
+  color: var(--conference-muted);
+  text-align: left;
+  font-size: 0.8rem;
+}
+
+.conference-footer {
+  width: min(1180px, calc(100% - 3rem));
+  margin: 0 auto;
+  min-height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 2rem;
+  border-top: 1px solid var(--conference-ink);
+}
+
+.conference-footer div {
+  display: flex;
+  flex-direction: column;
+}
+
+.conference-footer strong {
+  font-family: var(--conference-serif);
+  font-weight: 400;
+}
+
+.conference-footer span {
+  color: var(--conference-muted);
+  font-size: 0.78rem;
+}
+
+@media (max-width: 980px) {
+  .conference-placeholder-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .conference-profile-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .conference-header-inner {
+    min-height: 104px;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.65rem;
+  }
+
+  .conference-nav {
+    width: 100%;
+    justify-content: flex-start;
+    gap: 0.55rem 1.1rem;
+  }
+
+  .conference-nav-dropdown {
+    position: static;
+  }
+
+  .conference-nav-submenu {
+    top: calc(100% + 1px);
+    right: 0;
+    left: 0;
+    min-width: 0;
+  }
+
+  .conference-hero,
+  .conference-hero-inner {
+    min-height: 400px;
+  }
+
+  .conference-hero h1 {
+    font-size: 3.8rem;
+  }
+
+  .conference-page-code-of-conduct .conference-page-intro h1 {
+    font-size: 3rem;
+  }
+
+  .conference-lisa-consortium-2027 .conference-hero-art {
+    right: auto;
+    left: 50%;
+    width: auto;
+    max-width: none;
+    height: 48%;
+    transform: translateX(-50%);
+  }
+
+  .conference-hero::before {
+    background-position: center;
+    background-size: auto 90%;
+    opacity: 0.25;
+  }
+
+  .conference-section,
+  .conference-page-intro {
+    padding-top: 4.5rem;
+    padding-bottom: 4.5rem;
+  }
+
+  .conference-committees,
+  .conference-committees-with-poster,
+  .conference-about-grid,
+  .conference-placeholder-grid,
+  .conference-dining-list,
+  .conference-information-grid,
+  .conference-day,
+  .conference-participant-list {
+    grid-template-columns: 1fr;
+  }
+
+  .conference-profile-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .conference-venues-intro,
+  .conference-venue-directory {
+    grid-template-columns: 1fr;
+  }
+
+  .conference-venues-intro {
+    gap: 1.4rem;
+  }
+
+  .conference-map {
+    min-height: 440px;
+  }
+
+  .conference-poster-thumb {
+    align-items: flex-start;
+    margin-top: 0.5rem;
+    transform: none;
+  }
+
+  .conference-day {
+    gap: 2rem;
+  }
+
+  .conference-day-label {
+    position: static;
+  }
+
+  .conference-topic-legend ul {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.65rem 1.2rem;
+  }
+
+  .conference-about-logos {
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 2rem;
+    padding-top: 0;
+  }
+
+  .conference-about-logos a {
+    width: min(140px, 42vw);
+  }
+
+  .conference-footer {
+    min-height: 190px;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .conference-header-inner,
+  .conference-hero-inner,
+  .conference-section,
+  .conference-page-intro,
+  .conference-page-body,
+  .conference-footer {
+    width: min(100% - 2rem, 1180px);
+  }
+
+  .conference-wordmark small {
+    display: none;
+  }
+
+  .conference-nav a,
+  .conference-nav-dropdown summary {
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+  }
+
+  .conference-slot {
+    grid-template-columns: 1fr;
+    gap: 0.35rem;
+  }
+
+  .conference-block-meta {
+    white-space: normal;
+  }
+
+  .conference-map {
+    min-height: 360px;
+  }
+
+  .conference-page-venue .conference-map {
+    min-height: 480px;
+  }
+
+  .conference-map-popup .leaflet-popup-content {
+    margin: 0.85rem;
+  }
+
+  .conference-map-room {
+    grid-template-columns: 76px minmax(0, 1fr);
+  }
+
+  .conference-map-room img,
+  .conference-map-room-placeholder {
+    width: 76px;
+    height: 58px;
+  }
+}
+
+@media print {
+  body.conference-site {
+    background: white;
+  }
+
+  .conference-header,
+  .conference-footer,
+  .conference-skip-link {
+    display: none;
+  }
+
+  .conference-page-intro,
+  .conference-page-body {
+    width: 100%;
+    padding: 1rem 0;
+  }
+
+  .conference-day {
+    break-inside: avoid;
+  }
+
+  .conference-block:not([open]) .conference-slots {
+    display: block;
+  }
+
+  .conference-block-chevron {
+    display: none;
+  }
+}
