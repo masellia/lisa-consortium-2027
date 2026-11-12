@@ -358,6 +358,13 @@ body.conference-site {
   font-size: 1.08rem;
 }
 
+.conference-page-venue .conference-page-intro > p:last-child,
+.conference-page-code-of-conduct .conference-page-intro > p:last-child,
+.conference-page-code-of-conduct .conference-prose p {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
 .conference-about-grid {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(180px, 0.3fr);
