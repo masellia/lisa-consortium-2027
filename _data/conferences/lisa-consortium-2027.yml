@@ -341,7 +341,7 @@ local_committee:
     image_alt:
   - name: Laura Pezzella
     initials: LP
-    image:
+    image: /assets/img/LP.jpeg
     image_alt:
   - name: Charlotte Rizo-Crastes
     initials: CRC
