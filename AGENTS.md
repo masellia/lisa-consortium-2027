@@ -2,14 +2,14 @@
 
 This is the standalone Jekyll site for the LISA Consortium Meeting 2027 at the Gran Sasso Science Institute.
 
-- Production URL: https://masellia.github.io/lisa-consortium-2027/
+- Production URL: https://lisaconsortium2027.com/ (custom domain via `CNAME`; https://masellia.github.io/lisa-consortium-2027/ redirects there)
 - GitHub repository: `masellia/lisa-consortium-2027`
 - Default branch: `main`
 - Deployment: GitHub Pages from the repository root
 
 ## Structure
 
-- `_config.yml`: Jekyll configuration, production `url`, and `baseurl: /lisa-consortium-2027`
+- `_config.yml`: Jekyll configuration, production `url`, and empty `baseurl` (served from the custom-domain root)
 - `_data/conferences/lisa-consortium-2027.yml`: all event content, venues, dining, committees, participants, timetable, and Code of Conduct contacts
 - Root `*.md` files: one page per route, using root-based permalinks
 - `_layouts/conference.html`: shared page layout
@@ -20,7 +20,7 @@ This is the standalone Jekyll site for the LISA Consortium Meeting 2027 at the G
 
 ## URL rules
 
-The site is served from a project-page subpath. Every internal URL must respect the base path.
+The site is served from the root of the custom domain. Keep using the URL filters so the site still works if a base path is reintroduced.
 
 - Use `{{ '/path/' | relative_url }}` for internal links and assets.
 - Use `{{ page.url | absolute_url }}` for canonical or structured-data URLs.
@@ -47,9 +47,9 @@ Before committing:
 2. Confirm all nine routes exist: `/`, `/venue/`, `/dining/`, `/timetable/`, `/participants/`, `/information/`, `/information/local-organizing-committee/`, `/information/public-lecture/`, `/code-of-conduct/`.
 3. Check that internal links and assets use the base path exactly once.
 4. Check navigation, dropdown behavior, Leaflet maps, and mobile layout when changing shared markup or CSS.
-5. Confirm the sitemap and canonical URLs use `https://masellia.github.io/lisa-consortium-2027/`.
+5. Confirm the sitemap and canonical URLs use `https://lisaconsortium2027.com/`.
 
-For a local preview under the real base path, serve the built site from a parent directory that contains a `lisa-consortium-2027` folder or symlink, then open `http://127.0.0.1:<port>/lisa-consortium-2027/`.
+For a local preview, serve `_site/` directly and open `http://127.0.0.1:<port>/`.
 
 ## Content rules
 
