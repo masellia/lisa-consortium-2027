@@ -349,7 +349,7 @@ local_committee:
     image_alt:
   - name: Juhoon Son
     initials: JS
-    image:
+    image: /assets/img/JS.jpeg
     image_alt:
 
 # Public-safe skeleton only: session blocks and times. No talk titles, speakers
