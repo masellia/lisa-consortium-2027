@@ -333,7 +333,7 @@ local_committee:
     image_alt:
   - name: Akshita Mittal
     initials: AM
-    image:
+    image: /assets/img/AMI.jpeg
     image_alt:
   - name: Luca Nagni
     initials: LN
