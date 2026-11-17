@@ -337,7 +337,7 @@ local_committee:
     image_alt:
   - name: Luca Nagni
     initials: LN
-    image:
+    image: /assets/img/LN.jpg
     image_alt:
   - name: Laura Pezzella
     initials: LP
