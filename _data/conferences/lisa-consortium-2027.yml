@@ -317,7 +317,7 @@ working_group_chairs:
 local_committee:
   - name: Manuel Arca Sedda
     initials: MAS
-    image:
+    image: /assets/img/MAS.jpg
     image_alt:
   - name: Riccardo Buscicchio
     initials: RB
