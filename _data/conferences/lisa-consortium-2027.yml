@@ -345,7 +345,15 @@ local_committee:
     image_alt:
   - name: Charlotte Rizo-Crastes
     initials: CRC
-    image:
+    image: /assets/img/CRC.jpeg
+    image_alt:
+  - name: Giulia Ruggeri
+    initials: GR
+    image: /assets/img/GR.jpeg
+    image_alt:
+  - name: Matteo Schulz
+    initials: MS
+    image: /assets/img/JS.jpeg
     image_alt:
   - name: Juhoon Son
     initials: JS
@@ -497,6 +505,10 @@ participants:
   - name: Laura Pezzella
     affiliation: GSSI
   - name: Charlotte Rizo-Crastes
+    affiliation: GSSI
+  - name: Giulia Ruggeri
+    affiliation: GSSI
+  - name: Matteo Schulz
     affiliation: GSSI
   - name: Juhoon Son
     affiliation: GSSI
